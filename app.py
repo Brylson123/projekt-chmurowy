@@ -1,0 +1,1 @@
+print("Aplikacja chmurowa dziala!")
