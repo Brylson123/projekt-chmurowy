@@ -1,0 +1,15 @@
+name: Sprawdzanie Budowy Dockera
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Budowanie obrazu Docker
+      run: docker build .

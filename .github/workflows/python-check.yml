@@ -1,0 +1,19 @@
+name: Test Aplikacji Python
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-python:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Ustawienie Pythona
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Test uruchomienia skryptu
+      run: python app.py
